@@ -437,6 +437,16 @@ def test_only_running_once():
     assert True
 
 
+def test_pass_env_var():
+    print("test passing env var")
+    if "MU_TESTING_PIOS" in os.environ:
+        print("found the environment variable: ")
+        print(os.environ["MU_TESTING_PIOS"])
+    else:
+        print("Env var NOT FOUND")
+        assert False
+
+
 def test_running_twice():
     """
     If we attempt to acquire the application lock when it's already held

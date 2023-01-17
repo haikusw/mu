@@ -172,4 +172,4 @@ jobs:
           password: raspberry
           port:  ${{ job.services.rpios.ports[5022] }}
           command_timeout: 30m
-          script: xvfb-run python make.py check
+          script: xvfb-run MU_TESTING_PIOS='1' python make.py check
